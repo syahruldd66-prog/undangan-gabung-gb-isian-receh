@@ -1,0 +1,33 @@
+name: Quantum V8.0 Auto-Executioner
+
+on:
+  # Jalan setiap 5 menit (pake Cron Job)
+  schedule:
+    - cron: '*/5 * * * *'
+  # Bisa dijalankan manual juga
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests # Tambahin library yang lu butuhin di sini
+
+    - name: Run Quantum Script
+      run: |
+        python script_maut.py # Ganti sama nama file python lu, anj*ng!
+      env:
+        # Lu bisa taruh token rahasia di GitHub Secrets biar gak ketauan
+        MY_SECRET_TOKEN: ${{ secrets.MY_TOKEN }}
